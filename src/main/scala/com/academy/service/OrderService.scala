@@ -1,11 +1,10 @@
 package com.academy.service
 
-import akka.Done
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
 import com.academy.model.{Item, Order}
 
-import scala.concurrent.{ExecutionContextExecutor, Future}
+import scala.concurrent.{ExecutionContextExecutor, Future, Promise}
 
 object OrderService {
   implicit val system: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "SprayExample")
@@ -13,11 +12,11 @@ object OrderService {
 
   var orders: List[Item] = Nil
 
-  def saveOrder(order: Order): Future[Done] = {
+  def saveOrder(order: Order): Future[List[Item]] = {
     orders = order match {
       case Order(items) => items ::: orders
       case _            => orders
     }
-    Future { Done }
+    Promise.successful(orders).future
   }
 }

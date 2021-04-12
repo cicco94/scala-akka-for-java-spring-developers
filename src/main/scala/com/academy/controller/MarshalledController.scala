@@ -21,14 +21,14 @@ object MarshalledController extends App {
   implicit val itemFormat: RootJsonFormat[Item] = jsonFormat2(Item)
   implicit val orderFormat: RootJsonFormat[Order] = jsonFormat1(Order)
 
-  // POST localhost:8080/hello => {"items":[]}
-  val route: Route = path("hello") {
+  // POST localhost:8080/order => {"items":[{"name":"n1", "id":1}]}
+  val route: Route = path("order") {
     post {
       system.log.info("invoking post")
       entity(as[Order]) { order =>
-        val saved: Future[Done] = saveOrder(order)
+        val saved: Future[List[Item]] = saveOrder(order)
         onSuccess(saved) { _ =>
-          complete("order created")
+          complete(saved)
         }
       }
     }
