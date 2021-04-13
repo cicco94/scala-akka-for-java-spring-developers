@@ -19,9 +19,11 @@ We will follow this common pattern: Controller -> Service -> Repository -> Servi
 - `src/main/resources/mysql-application.conf`: it configures the database
 
 ### Unit tests 
-Follow this samples:
-- `src/test/scala/com/academy/DummyTest.scala`
-- `src/test/scala/com/academy/service/OrderServiceTest.scala`
+To start, follow this samples:
+- `src/test/scala/com/academy/DummySpec.scala`
+- `src/test/scala/com/academy/service/OrderServiceSpec.scala`
+Then, take a look to how test a controller here:
+- `src/test/scala/com/academy/controller/UserControllerSpec.scala`
 
 #### External resources:
 - akka official doc: https://doc.akka.io/docs/akka/current/index.html?language=scala

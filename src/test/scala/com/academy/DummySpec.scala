@@ -3,7 +3,7 @@ package com.academy
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-class DummyTest extends AnyFlatSpec with Matchers {
+class DummySpec extends AnyFlatSpec with Matchers {
 
   "With a matcher" should "let us check equality" in {
     val number = 25

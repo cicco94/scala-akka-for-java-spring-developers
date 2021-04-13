@@ -22,6 +22,10 @@ libraryDependencies += "com.typesafe.akka" %% "akka-http" % akkaHttpVersion
 
 libraryDependencies += "com.typesafe.akka" %% "akka-slf4j" % akkaVersion
 
+libraryDependencies += "com.typesafe.akka" %% "akka-testkit" % akkaVersion % Test
+
+libraryDependencies += "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % Test
+
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
 
 libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.23"

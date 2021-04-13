@@ -4,7 +4,7 @@ import com.academy.model.{Item, Order}
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.flatspec.AnyFlatSpec
 
-class OrderServiceTest extends AnyFlatSpec with Matchers {
+class OrderServiceSpec extends AnyFlatSpec with Matchers {
 
   "Orders" should "be empty" in {
     OrderService.orders should equal(Nil)
