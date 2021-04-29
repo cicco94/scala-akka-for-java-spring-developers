@@ -1,6 +1,4 @@
-# Scala Akka for Java Spring Developers
-This project introduces java-spring developers to scala-akka framework
-
+# Scala Akka Slick demo
 We will follow this common pattern: Controller -> Service -> Repository -> Service -> Controller
 
 ### Run the environment
